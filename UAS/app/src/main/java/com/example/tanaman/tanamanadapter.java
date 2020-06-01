@@ -14,23 +14,22 @@ import com.bumptech.glide.Glide;
 
 import java.util.ArrayList;
 
-public class tanamanadapter extends RecyclerView.Adapter <tanamanadapter.tanamanviewholder> {
-    private Context context;
-    private ArrayList<tanaman> tanamans;
+public class tanamanadapter extends RecyclerView.Adapter<tanamanadapter.tanamanviewholder> {
+private Context context;
+private ArrayList <tanaman> tanamans;
 
-    public  tanamanadapter(Context tcontext, ArrayList<tanaman> tanamanss){
-        context = tcontext;
-        tanamans = tanamanss;
-
-
-    }
+        public tanamanadapter(Context tcontext, ArrayList<tanaman> ttanaman)
+        {
+            context = tcontext;
+            tanamans =ttanaman;
+        }
 
     @NonNull
     @Override
     public tanamanviewholder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from(context).inflate(R.layout.item_tanaman, parent,false);
+        View v = LayoutInflater.from(context).inflate(R.layout.item_tanaman,parent,false);
 
-        return new tanamanviewholder(v);
+            return new tanamanviewholder(v);
     }
 
     @Override
@@ -47,8 +46,7 @@ public class tanamanadapter extends RecyclerView.Adapter <tanamanadapter.tanaman
                 .load(gambarbaru)
                 .centerCrop()
                 .into(holder.imdata);
-
-    }
+        }
 
     @Override
     public int getItemCount() {
@@ -60,13 +58,12 @@ public class tanamanadapter extends RecyclerView.Adapter <tanamanadapter.tanaman
         public ImageView imdata;
         public TextView tvhargadata;
         public TextView tvnamadata;
-
         public tanamanviewholder(@NonNull View itemView) {
             super(itemView);
+
             imdata = itemView.findViewById(R.id.img_tanaman);
             tvhargadata = itemView.findViewById(R.id.tv_harga);
             tvnamadata = itemView.findViewById(R.id.tv_nama);
-
 
         }
     }
