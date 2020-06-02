@@ -20,7 +20,7 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
-    private tanamanadapter tanamanadapter;
+    private tanamanadapter tanamanAdapter;
     private RecyclerView recyclerView;
     private ArrayList<tanaman>  tanamans;
     int jumdata;
@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        recyclerView=findViewById(R.id.rv_list);
+        recyclerView = findViewById(R.id.rv_list);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
@@ -49,13 +49,13 @@ public class MainActivity extends AppCompatActivity {
                         try {
                             for (int i = 0; i < jumdata; i++) {
                                 JSONObject data = response.getJSONObject(i);
-                                String gambartanaman = data.getString("gambar");
-                                String namatanaman = data.getString("nama");
-                                String hargatanaman = data.getString("harga");
-                                tanamans.add(new tanaman(namatanaman, hargatanaman, gambartanaman));
+                                String gambarmenu = data.getString("gambar");
+                                String namamenu = data.getString("nama");
+                                String hargamenu = data.getString("harga");
+                                tanamans.add(new tanaman(namamenu, hargamenu, gambarmenu));
                             }
-                            tanamanadapter = new tanamanadapter(MainActivity.this, tanamans);
-                            recyclerView.setAdapter(tanamanadapter);
+                            tanamanAdapter = new tanamanadapter(MainActivity.this, tanamans);
+                            recyclerView.setAdapter(tanamanAdapter);
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }
@@ -65,7 +65,6 @@ public class MainActivity extends AppCompatActivity {
             public void onErrorResponse(VolleyError error) {
                 error.printStackTrace();
             }
-
     });
         requestQueue.add(request);
     }
