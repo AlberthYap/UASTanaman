@@ -38,9 +38,12 @@ private ArrayList <tanaman> tanamans;
             String gambarbaru = tanamanbaru.getGambar();
             String harga = tanamanbaru.getHarga();
             String nama = tanamanbaru.getNama();
+            String keterangan = tanamanbaru.getKeterangan();
 
             holder.tvnamadata.setText(nama);
             holder.tvhargadata.setText(harga);
+            holder.tvketerangandata.setText(keterangan);
+
         Glide
                 .with(context)
                 .load(gambarbaru)
@@ -58,12 +61,14 @@ private ArrayList <tanaman> tanamans;
         public ImageView imdata;
         public TextView tvhargadata;
         public TextView tvnamadata;
+        public TextView tvketerangandata;
         public tanamanviewholder(@NonNull View itemView) {
             super(itemView);
 
             imdata = itemView.findViewById(R.id.img_tanaman);
             tvhargadata = itemView.findViewById(R.id.tv_harga);
             tvnamadata = itemView.findViewById(R.id.tv_nama);
+            tvketerangandata = itemView.findViewById(R.id.tv_keterangan);
 
         }
     }
