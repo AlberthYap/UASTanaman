@@ -17,11 +17,21 @@ import java.util.ArrayList;
 public class tanamanadapter extends RecyclerView.Adapter<tanamanadapter.tanamanviewholder> {
 private Context context;
 private ArrayList <tanaman> tanamans;
+private OnItemClickListener mListener;
+
+    public interface OnItemClickListener {
+        void onItemClick(int position);
+    }
+
+    public void setOnItemClickListener(OnItemClickListener listener){
+        mListener = listener;
+    }
 
         public tanamanadapter(Context tcontext, ArrayList<tanaman> ttanaman)
         {
-            context = tcontext;
+            this.context = tcontext;
             tanamans =ttanaman;
+
         }
 
     @NonNull
@@ -40,9 +50,11 @@ private ArrayList <tanaman> tanamans;
             String nama = tanamanbaru.getNama();
             String keterangan = tanamanbaru.getKeterangan();
 
+
             holder.tvnamadata.setText(nama);
             holder.tvhargadata.setText(harga);
             holder.tvketerangandata.setText(keterangan);
+
 
         Glide
                 .with(context)
@@ -69,6 +81,18 @@ private ArrayList <tanaman> tanamans;
             tvhargadata = itemView.findViewById(R.id.tv_harga);
             tvnamadata = itemView.findViewById(R.id.tv_nama);
             tvketerangandata = itemView.findViewById(R.id.tv_keterangan);
+
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if (mListener != null){
+                        int position = getAdapterPosition();
+                        if (position != RecyclerView.NO_POSITION) {
+                            mListener.onItemClick(position);
+                        }
+                    }
+                }
+            });
 
         }
     }
