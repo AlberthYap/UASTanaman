@@ -20,14 +20,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:adjustViewBounds="true"
-                android:id="@+id/gambar"
+                android:id="@+id/tgambar"
                 android:scaleType="fitXY"
                 />
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="8dp"
-                android:id="@+id/nama"
+                android:id="@+id/tvnama"
                 android:gravity="center_vertical"
                 android:background="@android:color/holo_green_light"
                 android:textColor="@android:color/white"
@@ -40,7 +40,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="32sp"
-            android:id="@+id/harga"
+            android:id="@+id/tvharga"
             android:layout_marginLeft="16dp"
             android:layout_marginRight="16dp"
             android:layout_marginTop="16dp"
@@ -49,7 +49,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/info"
+            android:id="@+id/tvinfo"
             android:textSize="12sp"
             android:layout_marginLeft="16dp"
             android:layout_marginRight="16dp"
@@ -57,7 +57,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/judul"
+            android:id="@+id/tvjudul"
             android:layout_marginLeft="16dp"
             android:layout_marginRight="16dp"
             android:layout_marginBottom="8dp"
@@ -96,7 +96,7 @@
                     android:layout_height="wrap_content"
                     android:textSize="14dp"
                     android:layout_weight="1"
-                    android:id="@+id/history"
+                    android:id="@+id/tvhistory"
                     android:textColor="@android:color/black"/>
 
             </TableRow>
@@ -118,7 +118,7 @@
                     android:layout_height="wrap_content"
                     android:textSize="14sp"
                     android:layout_weight="1"
-                    android:id="@+id/cara"
+                    android:id="@+id/tvcara"
                     android:textColor="@android:color/black"/>
 
             </TableRow>
